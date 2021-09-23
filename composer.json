@@ -19,7 +19,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Amz\AplusContent": "/src"
+      "Amz\\AplusContent": "/src"
     }
   }
 }
