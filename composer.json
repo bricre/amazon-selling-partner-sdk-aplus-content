@@ -1,6 +1,6 @@
 {
   "name": "bricre/amazon-selling-partner-sdk-aplus-content",
-  "version": "2020-11-01",
+  "version": "2020.11.01",
   "description": "API client generated from OpenAPI definition from Amazon Selling Partner API for A+ Content Management",
   "minimum-stability": "stable",
   "license": "Apache-2.0",
@@ -19,7 +19,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Amz\\AplusContent": "/src"
+      "Amz\\AplusContent\\": "/src"
     }
   }
 }
