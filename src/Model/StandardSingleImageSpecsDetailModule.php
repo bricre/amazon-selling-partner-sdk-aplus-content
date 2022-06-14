@@ -2,7 +2,7 @@
 
 namespace Amz\AplusContent\Model;
 
-use OpenAPI\Runtime\AbstractModel as AbstractModel;
+use OpenAPI\Runtime\AbstractModel;
 
 /**
  * A standard image with paragraphs and a bulleted list, and extra space for

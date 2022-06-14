@@ -2,7 +2,7 @@
 
 namespace Amz\AplusContent\Model;
 
-use OpenAPI\Runtime\AbstractModel as AbstractModel;
+use OpenAPI\Runtime\AbstractModel;
 
 /**
  * A set of messages to the user, such as warnings or comments.

@@ -2,7 +2,7 @@
 
 namespace Amz\AplusContent\Model;
 
-use OpenAPI\Runtime\AbstractModel as AbstractModel;
+use OpenAPI\Runtime\AbstractModel;
 
 /**
  * The A+ standard fixed-length list of text, with a related headline.

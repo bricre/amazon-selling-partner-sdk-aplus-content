@@ -2,19 +2,18 @@
 
 namespace Amz\AplusContent\Api;
 
-use Amz\AplusContent\Model\ErrorList as ErrorList;
-use Amz\AplusContent\Model\GetContentDocumentResponse as GetContentDocumentResponse;
-use Amz\AplusContent\Model\ListContentDocumentAsinRelationsResponse as ListContentDocumentAsinRelationsResponse;
-use Amz\AplusContent\Model\PostContentDocumentApprovalSubmissionResponse as PostContentDocumentApprovalSubmissionResponse;
-use Amz\AplusContent\Model\PostContentDocumentAsinRelationsRequest as PostContentDocumentAsinRelationsRequest;
-use Amz\AplusContent\Model\PostContentDocumentAsinRelationsResponse as PostContentDocumentAsinRelationsResponse;
-use Amz\AplusContent\Model\PostContentDocumentRequest as PostContentDocumentRequest;
-use Amz\AplusContent\Model\PostContentDocumentResponse as PostContentDocumentResponse;
-use Amz\AplusContent\Model\PostContentDocumentSuspendSubmissionResponse as PostContentDocumentSuspendSubmissionResponse;
-use Amz\AplusContent\Model\SearchContentDocumentsResponse as SearchContentDocumentsResponse;
-use Amz\AplusContent\Model\SearchContentPublishRecordsResponse as SearchContentPublishRecordsResponse;
-use Amz\AplusContent\Model\ValidateContentDocumentAsinRelationsResponse as ValidateContentDocumentAsinRelationsResponse;
-use OpenAPI\Runtime\AbstractAPI as AbstractAPI;
+use Amz\AplusContent\Model\ErrorList;
+use Amz\AplusContent\Model\GetContentDocumentResponse;
+use Amz\AplusContent\Model\ListContentDocumentAsinRelationsResponse;
+use Amz\AplusContent\Model\PostContentDocumentApprovalSubmissionResponse;
+use Amz\AplusContent\Model\PostContentDocumentAsinRelationsRequest;
+use Amz\AplusContent\Model\PostContentDocumentAsinRelationsResponse;
+use Amz\AplusContent\Model\PostContentDocumentRequest;
+use Amz\AplusContent\Model\PostContentDocumentResponse;
+use Amz\AplusContent\Model\PostContentDocumentSuspendSubmissionResponse;
+use Amz\AplusContent\Model\SearchContentDocumentsResponse;
+use Amz\AplusContent\Model\SearchContentPublishRecordsResponse;
+use Amz\AplusContent\Model\ValidateContentDocumentAsinRelationsResponse;
 
 class AplusContent extends AbstractAPI
 {
@@ -52,10 +51,13 @@ class AplusContent extends AbstractAPI
      */
     public function searchContentDocuments(array $queries = [])
     {
-        return $this->client->request('searchContentDocuments', 'GET', 'aplus/2020-11-01/contentDocuments',
-            [
-                'query' => $queries,
-            ]
+        return $this->request(
+        'searchContentDocuments',
+        'GET',
+        'aplus/2020-11-01/contentDocuments',
+        null,
+        $queries,
+        []
         );
     }
 
@@ -97,11 +99,13 @@ class AplusContent extends AbstractAPI
      */
     public function createContentDocument(PostContentDocumentRequest $Model, array $queries = [])
     {
-        return $this->client->request('createContentDocument', 'POST', 'aplus/2020-11-01/contentDocuments',
-            [
-                'json' => $Model->getArrayCopy(),
-                'query' => $queries,
-            ]
+        return $this->request(
+        'createContentDocument',
+        'POST',
+        'aplus/2020-11-01/contentDocuments',
+        null,
+        $queries,
+        []
         );
     }
 
@@ -134,10 +138,13 @@ class AplusContent extends AbstractAPI
      */
     public function getContentDocument($contentReferenceKey, array $queries = [])
     {
-        return $this->client->request('getContentDocument', 'GET', "aplus/2020-11-01/contentDocuments/{$contentReferenceKey}",
-            [
-                'query' => $queries,
-            ]
+        return $this->request(
+        'getContentDocument',
+        'GET',
+        "aplus/2020-11-01/contentDocuments/$contentReferenceKey",
+        null,
+        $queries,
+        []
         );
     }
 
@@ -184,11 +191,13 @@ class AplusContent extends AbstractAPI
      */
     public function updateContentDocument($contentReferenceKey, PostContentDocumentRequest $Model, array $queries = [])
     {
-        return $this->client->request('updateContentDocument', 'POST', "aplus/2020-11-01/contentDocuments/{$contentReferenceKey}",
-            [
-                'json' => $Model->getArrayCopy(),
-                'query' => $queries,
-            ]
+        return $this->request(
+        'updateContentDocument',
+        'POST',
+        "aplus/2020-11-01/contentDocuments/$contentReferenceKey",
+        null,
+        $queries,
+        []
         );
     }
 
@@ -233,10 +242,13 @@ class AplusContent extends AbstractAPI
      */
     public function listContentDocumentAsinRelations($contentReferenceKey, array $queries = [])
     {
-        return $this->client->request('listContentDocumentAsinRelations', 'GET', "aplus/2020-11-01/contentDocuments/{$contentReferenceKey}/asins",
-            [
-                'query' => $queries,
-            ]
+        return $this->request(
+        'listContentDocumentAsinRelations',
+        'GET',
+        "aplus/2020-11-01/contentDocuments/$contentReferenceKey/asins",
+        null,
+        $queries,
+        []
         );
     }
 
@@ -288,11 +300,13 @@ class AplusContent extends AbstractAPI
      */
     public function postContentDocumentAsinRelations($contentReferenceKey, PostContentDocumentAsinRelationsRequest $Model, array $queries = [])
     {
-        return $this->client->request('postContentDocumentAsinRelations', 'POST', "aplus/2020-11-01/contentDocuments/{$contentReferenceKey}/asins",
-            [
-                'json' => $Model->getArrayCopy(),
-                'query' => $queries,
-            ]
+        return $this->request(
+        'postContentDocumentAsinRelations',
+        'POST',
+        "aplus/2020-11-01/contentDocuments/$contentReferenceKey/asins",
+        null,
+        $queries,
+        []
         );
     }
 
@@ -336,11 +350,13 @@ class AplusContent extends AbstractAPI
      */
     public function validateContentDocumentAsinRelations(PostContentDocumentRequest $Model, array $queries = [])
     {
-        return $this->client->request('validateContentDocumentAsinRelations', 'POST', 'aplus/2020-11-01/contentAsinValidations',
-            [
-                'json' => $Model->getArrayCopy(),
-                'query' => $queries,
-            ]
+        return $this->request(
+        'validateContentDocumentAsinRelations',
+        'POST',
+        'aplus/2020-11-01/contentAsinValidations',
+        null,
+        $queries,
+        []
         );
     }
 
@@ -376,10 +392,13 @@ class AplusContent extends AbstractAPI
      */
     public function searchContentPublishRecords(array $queries = [])
     {
-        return $this->client->request('searchContentPublishRecords', 'GET', 'aplus/2020-11-01/contentPublishRecords',
-            [
-                'query' => $queries,
-            ]
+        return $this->request(
+        'searchContentPublishRecords',
+        'GET',
+        'aplus/2020-11-01/contentPublishRecords',
+        null,
+        $queries,
+        []
         );
     }
 
@@ -411,10 +430,13 @@ class AplusContent extends AbstractAPI
      */
     public function postContentDocumentApprovalSubmission($contentReferenceKey, array $queries = [])
     {
-        return $this->client->request('postContentDocumentApprovalSubmission', 'POST', "aplus/2020-11-01/contentDocuments/{$contentReferenceKey}/approvalSubmissions",
-            [
-                'query' => $queries,
-            ]
+        return $this->request(
+        'postContentDocumentApprovalSubmission',
+        'POST',
+        "aplus/2020-11-01/contentDocuments/$contentReferenceKey/approvalSubmissions",
+        null,
+        $queries,
+        []
         );
     }
 
@@ -447,10 +469,13 @@ class AplusContent extends AbstractAPI
      */
     public function postContentDocumentSuspendSubmission($contentReferenceKey, array $queries = [])
     {
-        return $this->client->request('postContentDocumentSuspendSubmission', 'POST', "aplus/2020-11-01/contentDocuments/{$contentReferenceKey}/suspendSubmissions",
-            [
-                'query' => $queries,
-            ]
+        return $this->request(
+        'postContentDocumentSuspendSubmission',
+        'POST',
+        "aplus/2020-11-01/contentDocuments/$contentReferenceKey/suspendSubmissions",
+        null,
+        $queries,
+        []
         );
     }
 }
